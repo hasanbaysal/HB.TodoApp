@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<WorkListDto>
+
+
+<div class="container my-2">
+    <div class="text-end my-2">
+        <a asp-action="Create" asp-controller="Home" class="btn btn-primary btn-sm">Add A New Task</a>
+    </div>
+</div>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        
+        <tr>
+            <th>ID</th>
+            <th>Defination</th>
+            <th>Is Completed</th>
+            <th>Update & Delete</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Defination</td>
+                <td>@(item.IsCompleted ? "Task Completed": "Task Not Completed")</td>
+                <td> <a asp-action="Update" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-warning btn-sm"> Update </a> 
+                 <a asp-action="Remove" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> Delete </a> </td>
+            </tr>
+        }
+    </tbody>
+</table>

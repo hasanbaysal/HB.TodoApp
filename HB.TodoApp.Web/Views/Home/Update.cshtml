@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+}
+@model WorkUpdateDto
+<h1>Update</h1>
+
+<div class="container my-2">
+
+    <form asp-action="Update" method="post">
+
+        <input type="hidden" asp-for="Id"/>
+
+        <div class="mb-3">
+
+            <label class="form-label">Defination</label>
+            <input asp-for="Defination" class="form-control" />
+
+        </div>
+
+        <div class="form-check">
+
+
+            <input asp-for="IsCompleted" type="checkbox" class="form-check-input" />
+            <label class="form-check-label" asp-for="IsCompleted">Is completed</label>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+        <div asp-validation-summary="All" class="text-danger">
+        </div>
+    </form>
+
+</div>
