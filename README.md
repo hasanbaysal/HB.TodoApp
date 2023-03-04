@@ -9,3 +9,11 @@
 - Auto Mapper
 - Fluetn Validation
 - ASP.NET Core MVC 
+
+
+*If you want to clone this project, here's what you need to do*
+- restore and install all dependencies
+- delete migration folder
+- change connection string  =>  appsetting.json  
+- add first migration and than update database with ef core cli  commands
+ 
